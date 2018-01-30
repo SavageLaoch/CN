@@ -1,0 +1,19 @@
+function [r,ERR]= dia1(x,n)
+
+
+
+%x = pi/10;
+
+%n = 100;
+
+r = 0;
+for k = 0:n
+    
+   r = r +x^k/factorial(k); 
+    
+end
+
+ ERR = exp (x) - r
+
+end
+
