@@ -1,0 +1,6 @@
+*Representación de funciones
+	f = @(x) x.^2 + 7*x + 12
+	fplot(f,[-5,3])
+	xlim ylim([])
+	rango -> x = 40:0.01:50
+	puntos ->  plot (x,y,'*') 
