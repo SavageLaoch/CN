@@ -1,13 +1,15 @@
+function [c,n] = puntofijo(g,x0,tol,MaxIt)
 
-MaxIt = 100;
-tol   = 1e-4; % esto es 10^-4
+if nargin < 3
+    tol   = 1e-4; % esto es 10^-4
+end
 
-f = @(x) x.^7 + 11*x - 1;
-lambda = 0.05;
-g = @(x) x - lambda*f(x);
+if nargin < 4
+    MaxIt = 100;
+end
 
 n = 0;
-x = 0.5;
+x = x0;
 E = abs(g(x)-x);
 
 while E > tol && n < MaxIt
@@ -16,6 +18,6 @@ while E > tol && n < MaxIt
     E = abs(g(x)-x);
 end
 
-n
-E
-x
+c = x;
+
+end
