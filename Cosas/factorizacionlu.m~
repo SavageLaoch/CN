@@ -1,12 +1,17 @@
 function [L,U,e] = factorizacionlu(A)
 U = A;
 l = size(A);
+P = 
 if l(1) ~= l(2)
     error('Matriz no cuadrada')
 end
 m = l(1);
 L = eye(m);
 for k = 1: m-1
+    [~,j] = max(abs(U(k:m,k)));
+    if j ~= 1
+        
+    end
     if U(k,k) == 0
         error('Cero en el denominador %d',k)
     end

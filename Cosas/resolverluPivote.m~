@@ -1,9 +1,10 @@
-function [x,e] = resolverlu(A,b)
+function [x,e] = resolverluPivote(A,b)
 [L,U] = factorizacionlu(A);
 [n,m] = size(A); 
 if size(b,2) > size(b,1)
     b = b';
 end
+b = P*b
 y = b;
 for i = 2: m
     for j = 1: i-1
